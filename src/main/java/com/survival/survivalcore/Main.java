@@ -64,9 +64,10 @@ public class Main
     	for (int i = 0; i < numEnemies; i++) {
     		EntityZombie zombie = new EntityZombie(player.world);
     		BlockPos target = playerPos;
-    		target = target.add(-10,0,0);
+    		target = target.add(-10,0,0);  //TODO probably don't need to use a BlockPos here, Vec3d would work. Refactor --cwiley
     		IBlockState targetBlock = player.world.getBlockState(target);
     		
+    		//TODO THIS IS PROBABLY A REALLY BAD IMPLEMENTATION PLEASE RE-ASSESS LATER --cwiley
     		while (targetBlock.getMaterial() != Material.AIR) {
     			target = target.add(0,2,0);
     			targetBlock = player.world.getBlockState(target);
