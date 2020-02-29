@@ -7,6 +7,9 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.math.Vec3d;
 import net.minecraftforge.event.entity.item.ItemEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickItem;
 import net.minecraftforge.fml.common.Mod;
@@ -49,10 +52,18 @@ public class ExampleMod
     	public static void stickUsed(RightClickItem event) {
     		if (event.getItemStack().getItem() == Items.STICK) {
         		EntityPlayer player = (EntityPlayer)event.getEntity();
+        		Vec3d pos = player.getPositionVector();
+        		Vec3d lookVec = player.getLookVec();
+        		RayTraceResult result = player.rayTrace(100, 1.0f);
+        		BlockPos target = result.getBlockPos();
+        		
+             	        		
         		EntityZombie zombie = new EntityZombie(player.world);
-        		zombie.setLocationAndAngles(player.posX - 10, player.posY, player.posZ, 0, 0);
+        		zombie.setLocationAndAngles(target.getX(), target.getY(), target.getZ(), 0, 0);
+        		
         		if (!player.world.isRemote) {
         			player.world.spawnEntity(zombie);
+        			
         		}
     		}
     	}
