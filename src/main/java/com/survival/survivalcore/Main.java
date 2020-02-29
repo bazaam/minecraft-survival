@@ -1,7 +1,10 @@
-package com.example.examplemod;
+package com.survival.survivalcore;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirt;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -11,6 +14,7 @@ import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.item.ItemEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickItem;
 import net.minecraftforge.event.world.BlockEvent;
@@ -19,26 +23,30 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import org.apache.logging.log4j.Logger;
 
-@Mod(modid = ExampleMod.MODID, name = ExampleMod.NAME, version = ExampleMod.VERSION)
-public class ExampleMod
+import com.survival.survivalcore.blocks.HordeBlock;
+import com.survival.survivalcore.init.ModBlocks;
+
+@Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
+public class Main
 {
-    public static final String MODID = "testmod";
-    public static final String NAME = "Test Mod";
-    public static final String VERSION = "0.01";
+
 
     private static Logger logger;
     
     public static ToolMaterial testToolMaterial;
     public static Item myItem;
-    public static Block myBlock;
+    public static HordeBlock hordeController;
 
+   
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
         logger = event.getModLog();
+        ModBlocks.init();
     }
 
     @EventHandler
@@ -46,12 +54,18 @@ public class ExampleMod
     {
         // some example code
         logger.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+
     }
     
+
+    
     public static void SpawnWave(EntityPlayer player, BlockPos pos, int numEnemies) {
+    	BlockPos playerPos = player.getPosition();
     	for (int i = 0; i < numEnemies; i++) {
     		EntityZombie zombie = new EntityZombie(player.world);
-    		zombie.setLocationAndAngles(pos.getX(), pos.getY(), pos.getZ(), 0, 0);
+
+    		
+    		zombie.setLocationAndAngles(playerPos.getX(), playerPos.getY(), playerPos.getZ(), 0, 0);
     		if (!player.world.isRemote) {
     			player.world.spawnEntity(zombie);
     			
@@ -65,9 +79,7 @@ public class ExampleMod
     	public static void HordeBlockPlaced(BlockEvent.EntityPlaceEvent event) {
     		if (event.getEntity() instanceof EntityPlayer) {
     			EntityPlayer player = (EntityPlayer)event.getEntity();
-    			System.out.println("Im a real player!");
-    			if (event.getPlacedBlock().getBlock() instanceof BlockDirt ) {
-    				System.out.println("And I placed a real dirt block!");
+    			if (event.getPlacedBlock().getBlock() instanceof HordeBlock ) {
     				int stackSize = player.getHeldItemMainhand().getCount();
     				SpawnWave(player, player.getPosition(), stackSize);
     				
@@ -100,6 +112,6 @@ public class ExampleMod
     		}
     	}
     }
-    
+
 
 }

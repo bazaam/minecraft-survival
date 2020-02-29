@@ -1,7 +1,7 @@
 [
 {
-  "modid": "testmod",
-  "name": "Test Mod",
+  "modid": "survivalcore",
+  "name": "Survival Core",
   "description": "Testing mod export",
   "version": "${version}",
   "mcversion": "${mcversion}",
