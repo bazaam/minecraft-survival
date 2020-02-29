@@ -63,9 +63,16 @@ public class Main
     	BlockPos playerPos = player.getPosition();
     	for (int i = 0; i < numEnemies; i++) {
     		EntityZombie zombie = new EntityZombie(player.world);
-
+    		BlockPos target = playerPos;
+    		target = target.add(-10,0,0);
+    		IBlockState targetBlock = player.world.getBlockState(target);
     		
-    		zombie.setLocationAndAngles(playerPos.getX(), playerPos.getY(), playerPos.getZ(), 0, 0);
+    		while (targetBlock.getMaterial() != Material.AIR) {
+    			target = target.add(0,2,0);
+    			targetBlock = player.world.getBlockState(target);
+    		}
+    		
+    		zombie.setLocationAndAngles(target.getX(), target.getY(), target.getZ(), 0, 0);
     		if (!player.world.isRemote) {
     			player.world.spawnEntity(zombie);
     			
