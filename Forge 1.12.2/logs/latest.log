@@ -1,0 +1,38 @@
+[09:10:49] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 33715808ms behind, skipping 674316 tick(s)
+[11:04:25] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Stopping server
+[11:04:25] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving players
+[11:04:25] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving worlds
+[11:04:25] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'world'/overworld
+[11:04:25] [Server thread/INFO] [FML]: Unloading dimension 0
+[11:04:25] [Server Shutdown Thread/INFO] [net.minecraft.server.MinecraftServer]: Stopping server
+[11:04:25] [Server Shutdown Thread/INFO] [net.minecraft.server.MinecraftServer]: Saving players
+[11:04:25] [Server Shutdown Thread/INFO] [net.minecraft.server.MinecraftServer]: Saving worlds
+[11:04:25] [AWT-EventQueue-0/INFO] [STDERR]: [java.lang.ThreadGroup:uncaughtException:-1]: net.minecraftforge.fml.relauncher.FMLSecurityManager$ExitTrappedException
+[11:04:25] [AWT-EventQueue-0/INFO] [STDERR]: [java.lang.ThreadGroup:uncaughtException:-1]: 	at net.minecraftforge.fml.common.asm.transformers.TerminalTransformer$ExitVisitor.checkAccess(TerminalTransformer.java:171)
+[11:04:25] [AWT-EventQueue-0/INFO] [STDERR]: [java.lang.ThreadGroup:uncaughtException:-1]: 	at net.minecraftforge.fml.common.asm.transformers.TerminalTransformer$ExitVisitor.systemExitCalled(TerminalTransformer.java:137)
+[11:04:25] [AWT-EventQueue-0/INFO] [STDERR]: [java.lang.ThreadGroup:uncaughtException:-1]: 	at net.minecraft.server.gui.MinecraftServerGui$1.windowClosing(MinecraftServerGui.java:77)
+[11:04:25] [AWT-EventQueue-0/INFO] [STDERR]: [java.lang.ThreadGroup:uncaughtException:-1]: 	at java.awt.Window.processWindowEvent(Unknown Source)
+[11:04:25] [AWT-EventQueue-0/INFO] [STDERR]: [java.lang.ThreadGroup:uncaughtException:-1]: 	at javax.swing.JFrame.processWindowEvent(Unknown Source)
+[11:04:25] [AWT-EventQueue-0/INFO] [STDERR]: [java.lang.ThreadGroup:uncaughtException:-1]: 	at java.awt.Window.processEvent(Unknown Source)
+[11:04:25] [AWT-EventQueue-0/INFO] [STDERR]: [java.lang.ThreadGroup:uncaughtException:-1]: 	at java.awt.Component.dispatchEventImpl(Unknown Source)
+[11:04:25] [AWT-EventQueue-0/INFO] [STDERR]: [java.lang.ThreadGroup:uncaughtException:-1]: 	at java.awt.Container.dispatchEventImpl(Unknown Source)
+[11:04:25] [AWT-EventQueue-0/INFO] [STDERR]: [java.lang.ThreadGroup:uncaughtException:-1]: 	at java.awt.Window.dispatchEventImpl(Unknown Source)
+[11:04:25] [AWT-EventQueue-0/INFO] [STDERR]: [java.lang.ThreadGroup:uncaughtException:-1]: 	at java.awt.Component.dispatchEvent(Unknown Source)
+[11:04:25] [AWT-EventQueue-0/INFO] [STDERR]: [java.lang.ThreadGroup:uncaughtException:-1]: 	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+[11:04:25] [AWT-EventQueue-0/INFO] [STDERR]: [java.lang.ThreadGroup:uncaughtException:-1]: 	at java.awt.EventQueue.access$500(Unknown Source)
+[11:04:25] [AWT-EventQueue-0/INFO] [STDERR]: [java.lang.ThreadGroup:uncaughtException:-1]: 	at java.awt.EventQueue$3.run(Unknown Source)
+[11:04:25] [AWT-EventQueue-0/INFO] [STDERR]: [java.lang.ThreadGroup:uncaughtException:-1]: 	at java.awt.EventQueue$3.run(Unknown Source)
+[11:04:25] [AWT-EventQueue-0/INFO] [STDERR]: [java.lang.ThreadGroup:uncaughtException:-1]: 	at java.security.AccessController.doPrivileged(Native Method)
+[11:04:25] [AWT-EventQueue-0/INFO] [STDERR]: [java.lang.ThreadGroup:uncaughtException:-1]: 	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+[11:04:25] [AWT-EventQueue-0/INFO] [STDERR]: [java.lang.ThreadGroup:uncaughtException:-1]: 	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+[11:04:25] [AWT-EventQueue-0/INFO] [STDERR]: [java.lang.ThreadGroup:uncaughtException:-1]: 	at java.awt.EventQueue$4.run(Unknown Source)
+[11:04:25] [AWT-EventQueue-0/INFO] [STDERR]: [java.lang.ThreadGroup:uncaughtException:-1]: 	at java.awt.EventQueue$4.run(Unknown Source)
+[11:04:25] [AWT-EventQueue-0/INFO] [STDERR]: [java.lang.ThreadGroup:uncaughtException:-1]: 	at java.security.AccessController.doPrivileged(Native Method)
+[11:04:25] [AWT-EventQueue-0/INFO] [STDERR]: [java.lang.ThreadGroup:uncaughtException:-1]: 	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+[11:04:25] [AWT-EventQueue-0/INFO] [STDERR]: [java.lang.ThreadGroup:uncaughtException:-1]: 	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+[11:04:25] [AWT-EventQueue-0/INFO] [STDERR]: [java.lang.ThreadGroup:uncaughtException:-1]: 	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+[11:04:25] [AWT-EventQueue-0/INFO] [STDERR]: [java.lang.ThreadGroup:uncaughtException:-1]: 	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+[11:04:25] [AWT-EventQueue-0/INFO] [STDERR]: [java.lang.ThreadGroup:uncaughtException:-1]: 	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+[11:04:25] [AWT-EventQueue-0/INFO] [STDERR]: [java.lang.ThreadGroup:uncaughtException:-1]: 	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+[11:04:25] [AWT-EventQueue-0/INFO] [STDERR]: [java.lang.ThreadGroup:uncaughtException:-1]: 	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+[11:04:25] [AWT-EventQueue-0/INFO] [STDERR]: [java.lang.ThreadGroup:uncaughtException:-1]: 	at java.awt.EventDispatchThread.run(Unknown Source)
