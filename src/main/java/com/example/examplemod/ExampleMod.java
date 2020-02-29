@@ -52,10 +52,7 @@ public class ExampleMod
     	public static void stickUsed(RightClickItem event) {
     		if (event.getItemStack().getItem() == Items.STICK) {
         		EntityPlayer player = (EntityPlayer)event.getEntity();
-        		Vec3d pos = player.getPositionVector();
-        		Vec3d lookVec = player.getLookVec();
-        		RayTraceResult result = player.rayTrace(100, 1.0f);
-        		BlockPos target = result.getBlockPos();
+        		BlockPos target = player.rayTrace(100, 1.0f).getBlockPos();
         		
              	        		
         		EntityZombie zombie = new EntityZombie(player.world);
