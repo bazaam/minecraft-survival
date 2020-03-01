@@ -25,6 +25,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
+import java.util.Random;
+
 import org.apache.logging.log4j.Logger;
 
 import com.survival.survivalcore.blocks.HordeBlock;
@@ -61,10 +63,12 @@ public class Main
     
     public static void SpawnWave(EntityPlayer player, BlockPos pos, int numEnemies) {
     	BlockPos playerPos = player.getPosition();
+    	Random rand = new Random();
+    	double radius = 40.0;
     	for (int i = 0; i < numEnemies; i++) {
     		EntityZombie zombie = new EntityZombie(player.world);
-    		BlockPos target = playerPos;
-    		target = target.add(-10,0,0);  //TODO probably don't need to use a BlockPos here, Vec3d would work. Refactor --cwiley
+    		BlockPos target = playerPos;																									//TODO probably don't need to use a BlockPos here, Vec3d would work. Refactor --cwiley
+    		target = target.add((radius*Math.cos(rand.nextDouble()*2*Math.PI)),0,(radius*Math.sin(rand.nextDouble()*2*Math.PI)));  
     		IBlockState targetBlock = player.world.getBlockState(target);
     		
     		//TODO THIS IS PROBABLY A REALLY BAD IMPLEMENTATION PLEASE RE-ASSESS LATER --cwiley
